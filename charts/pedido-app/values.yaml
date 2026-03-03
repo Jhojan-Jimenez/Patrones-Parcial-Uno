@@ -6,8 +6,8 @@
 # --------------- BACKEND ---------------
 backend:
   image:
-    repository: springcommunity/spring-petclinic-rest
-    tag: "3.2.1"
+    repository: jhojanjimenez/pedidos-backend
+    tag: "1.0.0"
     pullPolicy: IfNotPresent
 
   replicaCount: 1
@@ -42,8 +42,8 @@ backend:
 # --------------- FRONTEND ---------------
 frontend:
   image:
-    repository: nginx
-    tag: "alpine"
+    repository: jhojanjimenez/pedidos-frontend
+    tag: "1.0.0"
     pullPolicy: IfNotPresent
 
   replicaCount: 1
