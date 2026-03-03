@@ -6,8 +6,8 @@
 # --------------- BACKEND ---------------
 backend:
   image:
-    repository: ghcr.io/spring-petclinic/spring-petclinic
-    tag: "3.3.0"
+    repository: springcommunity/spring-petclinic-rest
+    tag: "3.2.1"
     pullPolicy: IfNotPresent
 
   replicaCount: 1
