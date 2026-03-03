@@ -36,4 +36,4 @@ postgresql:
       size: 1Gi
 
 ingress:
-  host: dev.pedidos.local
+  host: dev.174.138.124.207.nip.io
