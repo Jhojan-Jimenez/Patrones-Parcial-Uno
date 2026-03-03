@@ -13,7 +13,7 @@ spec:
 
   source:
     # IMPORTANTE: reemplazar con la URL real del repo
-    repoURL: https://github.com/TU_USUARIO/pedido-app
+    repoURL: https://github.com/Jhojan-Jimenez/Patrones-Parcial-Uno
     targetRevision: HEAD
     path: charts/pedido-app
     helm:
