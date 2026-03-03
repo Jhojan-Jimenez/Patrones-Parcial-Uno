@@ -25,11 +25,6 @@ spec:
               protocol: TCP
           env:
             # Variables no sensibles desde ConfigMap
-            - name: SPRING_PROFILES_ACTIVE
-              valueFrom:
-                configMapKeyRef:
-                  name: {{ include "backend.fullname" . }}-config
-                  key: SPRING_PROFILES_ACTIVE
             - name: SPRING_DATASOURCE_URL
               valueFrom:
                 configMapKeyRef:
@@ -58,14 +53,14 @@ spec:
                   key: DB_PASSWORD
           readinessProbe:
             httpGet:
-              path: /petclinic/actuator/health
+              path: /actuator/health
               port: 8080
             initialDelaySeconds: 60
             periodSeconds: 10
             failureThreshold: 10
           livenessProbe:
             httpGet:
-              path: /petclinic/actuator/health
+              path: /actuator/health
               port: 8080
             initialDelaySeconds: 90
             periodSeconds: 15

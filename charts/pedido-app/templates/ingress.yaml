@@ -10,8 +10,9 @@ metadata:
     {{- if .Values.ingress.annotations }}
     {{- toYaml .Values.ingress.annotations | nindent 4 }}
     {{- end }}
-    # Reescribe la URL para que /api/(.*)  llegue como /$1 al backend
     nginx.ingress.kubernetes.io/use-regex: "true"
+    # /api/pedidos → el backend recibe /pedidos
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
 spec:
   ingressClassName: {{ .Values.ingress.className }}
   rules:

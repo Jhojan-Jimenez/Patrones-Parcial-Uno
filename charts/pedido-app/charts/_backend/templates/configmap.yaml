@@ -8,7 +8,6 @@ metadata:
     app.kubernetes.io/instance: {{ .Release.Name }}
     app.kubernetes.io/component: backend
 data:
-  SPRING_PROFILES_ACTIVE: "spring-data-jpa"
   SPRING_DATASOURCE_URL: "jdbc:postgresql://{{ .Release.Name }}-postgresql:{{ .Values.db.port }}/{{ .Values.db.name }}"
   SERVER_PORT: "8080"
   SPRING_JPA_HIBERNATE_DDL_AUTO: "update"
