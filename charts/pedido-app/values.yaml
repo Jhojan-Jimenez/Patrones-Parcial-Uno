@@ -63,6 +63,8 @@ frontend:
 # --------------- POSTGRESQL (Bitnami subchart) ---------------
 postgresql:
   enabled: true
+  image:
+    registry: registry.bitnami.com   # Bitnami removió imágenes de Docker Hub en 2023
   auth:
     username: pedido_user
     password: "changeme123"     # sobreescribir en values-prod.yaml con secreto externo
