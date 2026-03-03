@@ -37,4 +37,4 @@ postgresql:
       size: 5Gi
 
 ingress:
-  host: pedidos.example.com
+  host: prod.174.138.124.207.nip.io
