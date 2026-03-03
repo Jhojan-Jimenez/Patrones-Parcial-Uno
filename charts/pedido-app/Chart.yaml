@@ -1,0 +1,13 @@
+apiVersion: v2
+name: pedido-app
+description: Sistema de gestión de pedidos — backend Spring Boot, frontend React, base de datos PostgreSQL
+type: application
+version: 0.1.0
+appVersion: "1.0.0"
+
+dependencies:
+  # Solo el chart externo va aquí. backend y frontend viven en charts/ directamente.
+  - name: postgresql
+    version: "13.4.4"
+    repository: "https://charts.bitnami.com/bitnami"
+    condition: postgresql.enabled

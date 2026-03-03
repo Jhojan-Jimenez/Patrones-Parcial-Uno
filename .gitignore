@@ -1,0 +1,17 @@
+# Kubernetes credentials - NEVER commit
+*kubeconfig*
+*.kubeconfig
+
+# Secrets y env files
+*.env
+.env.*
+secrets/
+
+# Helm charts dependencies (se generan con helm dependency update)
+charts/pedido-app/charts/*.tgz
+
+# OS
+.DS_Store
+Thumbs.db
+
+Parcial I.pdf

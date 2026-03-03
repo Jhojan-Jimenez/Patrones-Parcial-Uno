@@ -1,0 +1,35 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: pedido-app-dev
+  namespace: argocd
+  labels:
+    app.kubernetes.io/part-of: pedido-app
+    environment: dev
+  # Finalizer: ArgoCD eliminará los recursos K8s si se borra esta Application
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  project: default
+
+  source:
+    # IMPORTANTE: reemplazar con la URL real del repo
+    repoURL: https://github.com/TU_USUARIO/pedido-app
+    targetRevision: HEAD
+    path: charts/pedido-app
+    helm:
+      valueFiles:
+        - values.yaml
+        - values-dev.yaml
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: pedido-dev
+
+  syncPolicy:
+    automated:
+      prune: true        # Elimina recursos que ya no están en Git
+      selfHeal: true     # Revierte cambios manuales en el clúster
+    syncOptions:
+      - CreateNamespace=true   # Crea el namespace si no existe
+      - PrunePropagationPolicy=foreground

@@ -1,0 +1,37 @@
+# ============================================================
+# VALUES AMBIENTE DEV
+# Overrides sobre values.yaml base
+# ============================================================
+
+backend:
+  replicaCount: 1
+  resources:
+    requests:
+      cpu: "100m"
+      memory: "256Mi"
+    limits:
+      cpu: "300m"
+      memory: "384Mi"
+  hpa:
+    minReplicas: 1
+    maxReplicas: 2
+
+frontend:
+  replicaCount: 1
+  resources:
+    requests:
+      cpu: "50m"
+      memory: "64Mi"
+    limits:
+      cpu: "100m"
+      memory: "128Mi"
+
+postgresql:
+  auth:
+    password: "dev-password-123"
+  primary:
+    persistence:
+      size: 1Gi
+
+ingress:
+  host: dev.pedidos.local

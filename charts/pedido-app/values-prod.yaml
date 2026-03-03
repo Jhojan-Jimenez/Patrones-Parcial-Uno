@@ -1,0 +1,38 @@
+# ============================================================
+# VALUES AMBIENTE PROD
+# Overrides sobre values.yaml base
+# ============================================================
+
+backend:
+  replicaCount: 2
+  resources:
+    requests:
+      cpu: "200m"
+      memory: "512Mi"
+    limits:
+      cpu: "500m"
+      memory: "768Mi"
+  hpa:
+    minReplicas: 2
+    maxReplicas: 5
+
+frontend:
+  replicaCount: 2
+  resources:
+    requests:
+      cpu: "100m"
+      memory: "128Mi"
+    limits:
+      cpu: "200m"
+      memory: "256Mi"
+
+postgresql:
+  auth:
+    # En producción, usar secreto externo o Sealed Secrets en lugar de texto plano
+    password: "prod-secure-password-456"
+  primary:
+    persistence:
+      size: 5Gi
+
+ingress:
+  host: pedidos.example.com
