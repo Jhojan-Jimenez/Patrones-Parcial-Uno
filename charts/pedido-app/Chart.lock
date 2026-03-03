@@ -1,0 +1,12 @@
+dependencies:
+- name: postgresql
+  repository: https://charts.bitnami.com/bitnami
+  version: 13.4.4
+- name: backend
+  repository: file://charts/_backend
+  version: 0.1.0
+- name: frontend
+  repository: file://charts/_frontend
+  version: 0.1.0
+digest: sha256:53ec3d1f3181f5329fa841335733d5caf996603b73df06f25ffe5e0f2a64da34
+generated: "2026-03-02T22:20:46.8357992-05:00"

@@ -6,8 +6,15 @@ version: 0.1.0
 appVersion: "1.0.0"
 
 dependencies:
-  # Solo el chart externo va aquí. backend y frontend viven en charts/ directamente.
   - name: postgresql
     version: "13.4.4"
     repository: "https://charts.bitnami.com/bitnami"
     condition: postgresql.enabled
+  # Subcharts locales — las fuentes están en charts/_backend y charts/_frontend
+  # (el prefijo _ hace que Helm ignore esos directorios al cargar; solo usa los .tgz generados)
+  - name: backend
+    version: "0.1.0"
+    repository: "file://charts/_backend"
+  - name: frontend
+    version: "0.1.0"
+    repository: "file://charts/_frontend"
