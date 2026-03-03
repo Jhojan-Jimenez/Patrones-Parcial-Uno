@@ -15,6 +15,8 @@ backend:
   hpa:
     minReplicas: 2
     maxReplicas: 5
+  db:
+    password: "prod-secure-password-456"
 
 frontend:
   replicaCount: 2
