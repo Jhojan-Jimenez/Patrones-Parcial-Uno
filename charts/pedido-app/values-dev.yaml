@@ -19,6 +19,8 @@ backend:
     password: "dev-password-123"
 
 frontend:
+  image:
+    tag: "8b5f095"
   replicaCount: 1
   resources:
     requests:
