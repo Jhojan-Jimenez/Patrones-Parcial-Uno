@@ -2,7 +2,7 @@
   <div class="app">
     <header>
       <h1>Sistema de Pedidos</h1>
-      <span class="env-badge">DEVELOPER</span>
+      <span class="env-badge">DEV</span>
     </header>
 
     <main>
