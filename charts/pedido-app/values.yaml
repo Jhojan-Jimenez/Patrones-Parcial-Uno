@@ -43,7 +43,7 @@ backend:
 frontend:
   image:
     repository: jhojanjimenez/pedidos-frontend
-    tag: "4707c29" # frontend-tag
+    tag: "4707c30" # frontend-tag
     pullPolicy: IfNotPresent
 
   replicaCount: 1
