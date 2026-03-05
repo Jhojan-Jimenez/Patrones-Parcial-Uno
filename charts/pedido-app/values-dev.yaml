@@ -20,7 +20,7 @@ backend:
 
 frontend:
   image:
-    tag: "8b5f095"
+    tag: "c5f8314"
   replicaCount: 1
   resources:
     requests:
